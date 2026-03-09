@@ -1,3 +1,4 @@
+#day4
 def main():
 
     print("=" * 60)
@@ -15,7 +16,7 @@ def main():
     average_sales = total_sales / len(sales)
 
     print("\n" + "-" * 60)
-    print("               WEEKLY SALES REPORT")
+    print("                WEEKLY SALES REPORT")
     print("-" * 60)
 
     for i in range(len(days)):
@@ -26,7 +27,7 @@ def main():
     print(f"{'Average Daily Sales':<15}: ₹ {average_sales:,.2f}")
     print("=" * 60)
 
-    print("Report generated successfully.")
+    print("Report Generated Successfully.")
 
 
 if __name__ == "__main__":
