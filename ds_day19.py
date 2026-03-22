@@ -1,39 +1,49 @@
-import numpy as np
-import statistics as stats
+import random
+
+def coin_toss_simulation(n=1000):
+    heads = 0
+
+    for _ in range(n):
+        if random.choice(["H", "T"]) == "H":
+            heads += 1
+
+    probability = heads / n
+    return probability
+
+
+def dice_roll_simulation(n=1000):
+    count = 0
+
+    for _ in range(n):
+        if random.randint(1, 6) == 6:
+            count += 1
+
+    probability = count / n
+    return probability
+
 
 def main():
 
     print("=" * 60)
-    print("        STATISTICAL ANALYSIS OF DATASET")
+    print("        PROBABILITY ANALYSIS (REAL-LIFE SCENARIOS)")
     print("=" * 60)
 
-    data = [78, 85, 90, 72, 88, 95, 67, 80, 76, 84, 91, 73, 89, 77, 92]
+    prob_heads = coin_toss_simulation()
+    print("\n🎲 Coin Toss Simulation:")
+    print(f"Probability of getting Heads ≈ {prob_heads:.2f}")
 
-    print("\nDataset:")
-    print(data)
-
-    mean_value = np.mean(data)
-    median_value = np.median(data)
-    mode_value = stats.mode(data)
-
-    variance_value = np.var(data)
-    std_dev_value = np.std(data)
-
-    print("\n" + "-" * 60)
-    print("        CENTRAL TENDENCY")
-    print("-" * 60)
-    print(f"Mean   : {mean_value:.2f}")
-    print(f"Median : {median_value}")
-    print(f"Mode   : {mode_value}")
-
-    print("\n" + "-" * 60)
-    print("        DISPERSION MEASURES")
-    print("-" * 60)
-    print(f"Variance            : {variance_value:.2f}")
-    print(f"Standard Deviation  : {std_dev_value:.2f}")
+    prob_six = dice_roll_simulation()
+    print("\n🎯 Dice Roll Simulation:")
+    print(f"Probability of getting 6 ≈ {prob_six:.2f}")
 
     print("\n" + "=" * 60)
-    print("Analysis completed successfully.")
+    print("Interpretation:")
+    print("- Probability of heads ~ 0.5 (fair coin)")
+    print("- Probability of rolling 6 ~ 1/6 (~0.17)")
+    print("- More trials → more accurate probability")
+
+    print("\nAnalysis completed successfully.")
+
 
 if __name__ == "__main__":
     main()
