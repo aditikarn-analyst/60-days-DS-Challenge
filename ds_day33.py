@@ -33,6 +33,7 @@ def main():
         "Cancelled": 0
     })
 
+#encoded
     df_encoded = pd.get_dummies(df, drop_first=True)
 
     X = df_encoded.drop("Order_Status", axis=1)
