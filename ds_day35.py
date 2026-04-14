@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
 
-
+#maincodes
 def create_dataset():
     data = {
         "Age": [25,30,45,35,22,40,28,50,33,27,31,29],
