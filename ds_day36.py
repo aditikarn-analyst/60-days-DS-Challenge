@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
-
+#dataset
 def create_dataset():
     data = {
         "Age": [25,30,45,35,22,40,28,50,33,27],
