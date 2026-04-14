@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 
-
 def create_dataset():
     data = {
         "Age": [25,30,45,35,22,40,28,50,33,27,31,29],
@@ -26,13 +25,11 @@ def main():
 
     df = create_dataset()
 
-    # Target encoding
     df["Order_Status"] = df["Order_Status"].map({
         "Completed": 1,
         "Cancelled": 0
     })
 
-    # One-hot encoding
     df = pd.get_dummies(df, drop_first=True)
 
     X = df.drop("Order_Status", axis=1)
@@ -42,27 +39,18 @@ def main():
         X, y, test_size=0.3, random_state=42
     )
 
-    # =========================
-    # RANDOM FOREST
-    # =========================
     rf = RandomForestClassifier(n_estimators=100, random_state=42)
     rf.fit(X_train, y_train)
 
     rf_train_acc = accuracy_score(y_train, rf.predict(X_train))
     rf_test_acc = accuracy_score(y_test, rf.predict(X_test))
 
-    # =========================
-    # GRADIENT BOOSTING
-    # =========================
     gb = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1)
     gb.fit(X_train, y_train)
 
     gb_train_acc = accuracy_score(y_train, gb.predict(X_train))
     gb_test_acc = accuracy_score(y_test, gb.predict(X_test))
 
-    # =========================
-    # RESULTS
-    # =========================
     print("\n" + "-" * 70)
     print("MODEL PERFORMANCE")
     print("-" * 70)

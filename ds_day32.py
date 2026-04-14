@@ -24,50 +24,36 @@ def main():
     print("BIAS-VARIANCE ANALYSIS (PREDEFINED DATASET)")
     print("=" * 70)
 
-    # Step 1: Load dataset
     df = create_dataset()
     print("\nDataset Preview:")
     print(df.head())
 
-    # Step 2: Convert target
     df["Order_Status"] = df["Order_Status"].map({
         "Completed": 1,
         "Cancelled": 0
     })
 
-    # Step 3: Encode categorical variables
     df_encoded = pd.get_dummies(df, drop_first=True)
 
-    # Step 4: Features & Target
     X = df_encoded.drop("Order_Status", axis=1)
     y = df_encoded["Order_Status"]
 
-    # Step 5: Train-Test Split
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.3, random_state=42
     )
 
-    # =========================
-    # UNDERFITTING MODEL
-    # =========================
     underfit_model = DecisionTreeClassifier(max_depth=1)
     underfit_model.fit(X_train, y_train)
 
     train_pred_under = underfit_model.predict(X_train)
     test_pred_under = underfit_model.predict(X_test)
 
-    # =========================
-    # OVERFITTING MODEL
-    # =========================
     overfit_model = DecisionTreeClassifier(max_depth=None)
     overfit_model.fit(X_train, y_train)
 
     train_pred_over = overfit_model.predict(X_train)
     test_pred_over = overfit_model.predict(X_test)
 
-    # =========================
-    # RESULTS
-    # =========================
     print("\n" + "-" * 70)
     print("UNDERFITTING (High Bias)")
     print("-" * 70)

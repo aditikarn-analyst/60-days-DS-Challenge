@@ -22,24 +22,19 @@ def main():
     print("\nDataset Preview:")
     print(df)
 
-    # Scaling
     scaler = StandardScaler()
-    X_scaled = scaler.fit_transform(df)
 
-    # KMeans
     kmeans = KMeans(n_clusters=3, random_state=42)
     df["Cluster"] = kmeans.fit_predict(X_scaled)
 
     print("\nClustered Data:")
     print(df)
 
-    # Visualization
     plt.scatter(df["Age"], df["Total_Price"], c=df["Cluster"])
     plt.xlabel("Age")
     plt.ylabel("Total Price")
     plt.title("Customer Segmentation")
     plt.show()
-
 
 if __name__ == "__main__":
     main()

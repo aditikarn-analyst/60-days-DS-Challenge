@@ -24,50 +24,36 @@ def main():
     print("ENSEMBLE COMPARISON: RANDOM FOREST vs GRADIENT BOOSTING")
     print("=" * 70)
 
-    # Step 1: Dataset
     df = create_dataset()
     print("\nDataset Preview:")
     print(df.head())
 
-    # Step 2: Target conversion
     df["Order_Status"] = df["Order_Status"].map({
         "Completed": 1,
         "Cancelled": 0
     })
 
-    # Step 3: Encoding
     df_encoded = pd.get_dummies(df, drop_first=True)
 
-    # Step 4: Features & Target
     X = df_encoded.drop("Order_Status", axis=1)
     y = df_encoded["Order_Status"]
 
-    # Step 5: Train-Test Split
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.3, random_state=42
     )
 
-    # =========================
-    # RANDOM FOREST (Bagging)
-    # =========================
     rf_model = RandomForestClassifier(n_estimators=100, random_state=42)
     rf_model.fit(X_train, y_train)
 
     rf_pred = rf_model.predict(X_test)
     rf_acc = accuracy_score(y_test, rf_pred)
 
-    # =========================
-    # GRADIENT BOOSTING (Boosting)
-    # =========================
     gb_model = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1)
     gb_model.fit(X_train, y_train)
 
     gb_pred = gb_model.predict(X_test)
     gb_acc = accuracy_score(y_test, gb_pred)
 
-    # =========================
-    # RESULTS
-    # =========================
     print("\n" + "-" * 70)
     print("MODEL COMPARISON")
     print("-" * 70)
