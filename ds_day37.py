@@ -4,6 +4,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 
+#dataset
 def create_dataset():
     data = {
         "Age": [25,30,45,35,22,40,28,50,33,27],
