@@ -3,6 +3,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 
+#dataset
 def create_dataset():
     data = {
         "Age": [25,30,45,35,22,40,28,50,33,27,31,29],
