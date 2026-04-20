@@ -13,8 +13,6 @@ from sklearn.metrics import accuracy_score, classification_report
 # Download once
 nltk.download('stopwords')
 
-
-# ===============================
 # 1. SAMPLE DATASET (PREDEFINED)
 # ===============================
 def create_dataset():
