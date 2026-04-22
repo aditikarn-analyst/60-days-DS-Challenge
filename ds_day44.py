@@ -6,10 +6,6 @@ import math
 BLOCK_SIZE = 5   # characters per block
 REPLICATION_FACTOR = 2
 
-
-# ===============================
-# NAMENODE (Metadata Manager)
-# ===============================
 class NameNode:
     def __init__(self):
         self.metadata = {}  # file -> list of (block, datanodes)
