@@ -117,7 +117,7 @@ def engineer_features(tau1, tau2, tau3, tau4, p1, p2, p3, p4, g1, g2, g3, g4):
 # ══════════════════════════════════════════════════════════════════════════════
 with st.sidebar:
     st.markdown("## ⚡ Grid Stability")
-    st.markdown("**Capstone · Day 50–58**")
+    st.markdown("** Capstone **")
     st.markdown("---")
     st.markdown("### 📋 Project Info")
     st.markdown("""
@@ -126,7 +126,7 @@ with st.sidebar:
 | Dataset | UCI Grid Stability |
 | Rows | 10,000 |
 | Features | 19 |
-| Model | Random Forest |
+| Model | Gradient Boosting |
 | Accuracy | ~94% |
 | ROC-AUC | ~0.98 |
 """)
@@ -153,7 +153,7 @@ with st.sidebar:
 # MAIN TITLE
 # ══════════════════════════════════════════════════════════════════════════════
 st.markdown("# ⚡ Smart Grid Stability Prediction")
-st.markdown("##### UCI Electrical Grid · Binary Classification · Tuned Random Forest")
+st.markdown("##### UCI Electrical Grid · Binary Classification · Tuned Gradient Boosting")
 st.markdown("---")
 
 
@@ -297,10 +297,10 @@ with tab2:
     with col_a:
         st.markdown("#### 🏆 Model Comparison")
         model_df = pd.DataFrame({
-            "Model"    : ["Random Forest ⭐", "Gradient Boosting", "Decision Tree", "KNN", "Logistic Regression"],
-            "Accuracy" : [0.9420, 0.9280, 0.8940, 0.8720, 0.7810],
-            "F1 Score" : [0.9521, 0.9390, 0.9100, 0.8890, 0.8140],
-            "ROC-AUC"  : [0.982,  0.971,  0.894,  0.923,  0.858],
+            "Model"    : ["Random Forest ", "Gradient Boosting ⭐", "Decision Tree", "KNN", "Logistic Regression"],
+            "Accuracy" : [0.9235, 0.9270, 0.8325, 0.8695, 0.8760],
+            "F1 Score" : [0.9403, 0.9431, 0.8691, 0.9009, 0.9028],
+            "ROC-AUC"  : [0.979,  0.982,  0.8176,  0.940,  0.951],
         })
         st.dataframe(model_df, hide_index=True, use_container_width=True)
 
