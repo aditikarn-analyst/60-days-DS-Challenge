@@ -284,8 +284,8 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 **Your Name**  
 Data Science Capstone · Day 50–58  
-📧 your.email@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile) · [GitHub](https://github.com/your-username)
+📧 aditikarn167@gmail.com 
+🔗 [LinkedIn](https://www.linkedin.com/in/aditikarn-data-analyst/) · [GitHub](https://github.com/aditikarn-analyst)
 
 ---
 
