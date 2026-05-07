@@ -117,7 +117,7 @@ def engineer_features(tau1, tau2, tau3, tau4, p1, p2, p3, p4, g1, g2, g3, g4):
 # ══════════════════════════════════════════════════════════════════════════════
 with st.sidebar:
     st.markdown("## ⚡ Grid Stability")
-    st.markdown("** Capstone **")
+    st.markdown("**Capstone**")
     st.markdown("---")
     st.markdown("### 📋 Project Info")
     st.markdown("""
