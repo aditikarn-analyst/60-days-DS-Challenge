@@ -16,7 +16,7 @@ A smart grid becomes **unstable** when the system cannot balance power supply an
 
 > **ML Task:** Binary Classification → `stable` / `unstable`  
 > **Dataset:** UCI Electrical Grid Stability Simulated Data  
-> **Best Model:** Tuned Random Forest → **94.2% Accuracy | 0.982 ROC-AUC**
+> **Best Model:** Tuned Gradient Boosting  → **92.7% Accuracy | 0.97 ROC-AUC**
 
 ---
 
@@ -45,7 +45,7 @@ smart-grid-stability/
 │   └── Capstone_Day50_58_UCI_GridStability.ipynb   ← Full analysis notebook
 │
 ├── models/
-│   ├── best_model_rf.pkl           ← Trained Random Forest model
+│   ├── best_model_rf.pkl           ← Trained Gradient Boosting model
 │   └── scaler.pkl                  ← Fitted StandardScaler
 │
 ├── data/
@@ -114,8 +114,8 @@ Phase 6 → Deployment (Streamlit App + joblib)
 | Logistic Regression | 0.7810 |
 | K-Nearest Neighbors | 0.8720 |
 | Decision Tree | 0.8940 |
-| Gradient Boosting | 0.9280 |
-| **Random Forest ⭐** | **0.9420** |
+| **Gradient Boosting ⭐**  | **0.9270**|
+| Random Forest | **0.9235** |
 
 ---
 
